@@ -1,4 +1,4 @@
-Bitcoin SV
+Bitcoin SV | Next.js | API SPV Channels | Etheruem PIPE Line
 ===========
 
 What is Bitcoin SV?
