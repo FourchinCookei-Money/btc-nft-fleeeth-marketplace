@@ -1,4 +1,4 @@
-Bitcoin SV
+Bitcoin SV | Next.js | API SPV Channels | Ethereum Streamed | CodeSandBox
 ===========
 
 What is Bitcoin SV?
@@ -94,7 +94,6 @@ The distribution is shared and run using Docker.
 |CERTIFICATESPASSWORD|Password of the *.pfx file copied in step 5.|
    > **Note:** The remaining setting are explaned in the section [Settings](#Settings).
 
-
 ## Running application
 1. After the `.env` is set up, launch the spvchannels-db and spvchannels containers using the command:
 
@@ -114,7 +113,6 @@ The docker images as specified by the `docker-compose.yml` file, are automatical
 3. If everything is running you can continue to section [Account manager](#Account-manager:) to create an account.
 
 > **Note:** If you were provided with an account id and its credentials then you can skip Setting up an account and proceed to [REST interface](#REST-interface)
-
 ## Setting up an account
 To be able to call SPV Channels Server API, an account must be added into the database using the following command:
 
@@ -131,12 +129,10 @@ Parameter description:
 | [password] | password of the username |
 
    > **Note:** This command can also be used to add new users to an existing account (e.g. running `docker exec spvchannels ./SPVChannels.API.Rest -createaccount Accountname User1 OtherP@ssword` will return the account-id of Accountname).
-
 ## Setting up mobile push notifications
 To enable mobile push notifications from SPV Channels, a Firebase service account key is required. Copy the *.json file containing the Firebase service account key into the config folder and set FIREBASECREDENTIALSFILENAME in the `.env` file.
 
 >To get a Firebase service account *.json file, log in to your Firebase console and from Project Setting -> Service account -> Click on generate new private key. This will generate a *.json file with your Firebase service account key.
-
 
 ## REST interface
 
@@ -147,7 +143,6 @@ The reference implementation exposes different **REST APIs**:
 
 This interfaces can be accessed on `https://<servername>:<port>/api/v1`. A Swagger page with the interface description can be accessed at `https://<servername>:<port>/swagger/index.html`
 > **Note:** `<servername>` should be replaced with the name of the server where docker is running. `<port>` is set to 5010 by default in the `.env` file.
-
 ## Settings
 | Parameter | Data type (allowed value) | Description |
 | ----------- | ----------- | ----------- |
@@ -178,3 +173,50 @@ This interfaces can be accessed on `https://<servername>:<port>/api/v1`. A Swagg
     docker-compose down
     ```
 
+# This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Codesandbox
+
+The easiest way to deploy your Next.js app is to use the [codesandbox](https://codesandbox.io/) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.<p></p>
+
+<p>© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
