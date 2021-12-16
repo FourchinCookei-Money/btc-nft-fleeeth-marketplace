@@ -1,8 +1,5 @@
-Contributing to Bitcoin SV
-===========================
+# Contribution Guidelines
 
-Thank you for your interest.
+Please see our contribution guidelines in [the Solidity documentation](https://docs.soliditylang.org/en/latest/contributing.html).
 
-At this stage in the development of Bitcoin SV we are not
-accepting contributions to the project. We expect to change
-this policy soon.
+Thank you for your help!

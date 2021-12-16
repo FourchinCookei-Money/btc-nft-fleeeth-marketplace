@@ -1,0 +1,64 @@
+- name: Run Parasoft C/C++test
+  # You may pin to the exact commit or the version.
+  # uses: parasoft/run-cpptest-action@aeb0150eeb0f96098ad3bac53609fd462f88c4f6
+  uses: parasoft/run-cpptest-action@1.0.1
+  with:
+    # Installation folder of Parasoft C/C++test. If not specified, the cpptestcli executable must be added to $PATH.
+    installDir: # optional
+    # Working directory for running C/C++test.
+    workingDir: # optional, default is ${{ github.workspace }}
+    # Identifier of a compiler configuration. Ensure you specify the configuration that matches your compiler.
+    compilerConfig: # optional, default is gcc_9-64
+    # Test configuration to be used for code analysis.
+    testConfig: # optional, default is builtin://Recommended Rules
+    # Output folder for reports from code analysis.
+    reportDir: # optional, default is reports
+    # Format of reports from code analysis.
+    reportFormat: # optional, default is xml,html,sarif
+    # Input scope for analysis (typically, cpptestscan.bdf or compile_commands.json, depending on the project type and the build system).
+    input: # optional, default is cpptestscan.bdf
+    # Additional parameters for the cpptestcli executable.
+    additionalParams: # optional, default is 
+    # Command line pattern for running C/C++test.
+    commandLinePattern: # optional, default is ${cpptestcli} -compiler "${compilerConfig}" -config "${testConfig}" -property report.format=${reportFormat} -report "${reportDir}" -module . -input "${input}" ${additionalParams}
+
+
+
+...
+
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
